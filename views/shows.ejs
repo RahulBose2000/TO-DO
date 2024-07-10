@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals</title>
+</head>
+<body>
+    <h1>Showing your <%= day  %>-<%= month %>-<%= year %>  Goals</h1>
+   <ul>
+    <% for( let show of shows ) { %>
+     <div>
+    <li>Goal : <a href="/shows/<%=show._id  %>"><%= show.purpose  %></a></li> 
+        <br>
+    </div>
+    <% } %>
+   </ul>
+   <form action="/">
+    <button>click here to go back</button>
+</form>
+<br><br>
+<form action="/shows/new">
+    <button>Click here to add new Goals</button>
+</form>
+<br><br>
+<% if(day&month&year!=='All'){ %>
+<form action="/shows">
+    <button>Click here to show all </button>
+</form>
+    <% } %>
+</ul>
+</body>
+</html>

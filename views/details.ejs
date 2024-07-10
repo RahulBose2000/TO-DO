@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+<body>
+    <h1>Details</h1>
+    <ul>
+        <li>Goal: <%= work.purpose  %></li>
+       <li> Date: <a href="/shows?day=<%= work.day  %>&month=<%= work.month  %>&year=<%=work.year  %>"><%= work.day  %>/<%= work.month  %>/<%=work.year  %></a> </li>
+       <li>Status: <%= work.status  %></li>
+    </ul>
+
+    <form action="/shows">
+        <button>Click here to go back</button>
+    </form>
+    <br>
+    <br>
+    <form action="/shows/<%= work._id %>?_method=DELETE" method="post" >
+        <button>Delete</button>
+    </form>
+    <br><br>
+    <form action="/shows/<%= work._id %>/edit">
+        <button> Edit</button>
+    </form>
+</body>
+</html>

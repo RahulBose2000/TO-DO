@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit your goad Goal</h1>
+
+    <form action="/shows/<%= goalEdit._id %>?_method=PUT" method="post">
+        <label for="purpose">Goals: </label>
+        <input type="text" name="purpose" id="purpose" placeholder="New Goal" value="<%= goalEdit.purpose %>"> <br> <br>
+        <label for="Date">Date: </label>
+        <input type="number"name="day" id="Date" placeholder="Enter day" value="<%= goalEdit.day %>">
+        <input type="number"name="month" id="Date" placeholder="Enter month" value="<%= goalEdit.month %>">
+        <input type="number"name="year" id="Date" placeholder="Enter year" value="<%= goalEdit.year %>"> <br> <br>
+
+        <label for="status">status : </label>  <select name="status" id="status">
+            <% status.forEach(el => { %>
+                <option value="<%=el %>" <%= goalEdit.status === el ? 'selected':'' %> ><%= el %></option>
+            <% }) %>   
+        </select>
+        <br><br>
+        <button>submit</button>
+    </form>
+    
+</body>
+</html>
